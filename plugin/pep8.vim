@@ -23,9 +23,10 @@ function! s:Pep8(cmd)
     " Perform the pep8 operation.
     try
         " Set the appropriate grep options.
-        "let &grepprg=g:jslintprg
+        let &grepprg=g:pep8prg
         "let &grepformat="%-P%f,%A%>\ #%\\d%\\+\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,%-G%f\ is\ OK.,%-Q"
         "let &grepformat="%-P%f,%A%>\ %m,%Z%.%#Line\ %l\\,\ Pos\ %c,%-G%f\ is\ OK.,%-Q"
+        let &grepformat="%f:%l:%c: %t%n %m"
 
         " Construct the execution line.
         let cmdline = [a:cmd]
