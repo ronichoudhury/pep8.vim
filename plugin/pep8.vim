@@ -32,10 +32,10 @@ function! s:Pep8(cmd)
 
         " Execute the command.
         silent execute join(cmdline)
-    "finally
+    finally
         " Restore the old grep settings.
-        "let &grepprg=grepprg_bak
-        "let &grepformat=grepformat_bak
+        let &grepprg=grepprg_bak
+        let &grepformat=grepformat_bak
     endtry
 
     " Open the quickfix window and display the errors, if there were any;
